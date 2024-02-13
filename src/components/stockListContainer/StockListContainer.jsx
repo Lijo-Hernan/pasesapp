@@ -21,7 +21,7 @@ const StockListContainer = () => {
     
     return (
         <div className='stockContainer'>
-            <h2 className='stockContainer__intro'>Control de Stock</h2>
+            <h1 className='stockContainer__intro'>Control de Stock</h1>
             <div className='stockCcontainer__card'>
                 {stocks.length == 0 ? <h3>Cargando...</h3> 
                 : 

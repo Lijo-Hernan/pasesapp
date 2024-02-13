@@ -45,6 +45,7 @@
 .stockNumber {
     font-size: xx-large;
     padding: 4px;
+    font-style: bold;
 }
 
 .imagenParaMostrar {
