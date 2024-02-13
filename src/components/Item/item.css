@@ -1,0 +1,11 @@
+.item__card {
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    align-items: first baseline;
+    background-color:  #3f3f3f;
+    color: white;
+    border-radius: 25px;
+    width: 90%;
+    margin: 1vh;
+}
