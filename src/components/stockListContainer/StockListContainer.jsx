@@ -16,7 +16,7 @@ const StockListContainer = () => {
                 .catch ((error)=> console.log(error))
             }
             fetchstocks()
-        }, 3000)
+        }, 1000)
     },[])
     
     return (

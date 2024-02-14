@@ -2,27 +2,30 @@
     {
         "id": "1",
         "nombre": "Tomógrafo",
-        "Reinico":"",
-        "Técnico":"",
-        "Reporte":"",
-        "caso":""
+        "reinicio":"14/02/2024",
+        "tecnico":"Lijó",
+        "reporte":"",
+        "caso":"",
+        "descripcion":""
     },
 
     {
         "id": "2",
         "nombre": "Bomba de Contraste",
-        "Reinico":"",
-        "Técnico":"",
-        "Reporte":"",
-        "caso":""
+        "reinicio":"",
+        "tecnico":"",
+        "reporte":"10/02/2024",
+        "caso":"14578fgh",
+        "descripcion":"Falla en la pantalla de la bomba"
     },
 
     {
         "id": "3",
         "nombre": "Impersora Laser",
-        "Reinico":"",
-        "Técnico":"",
-        "Reporte":"",
-        "caso":""
+        "reinicio":"",
+        "tecnico":"",
+        "reporte":"",
+        "caso":"",
+        "descripcion":""
     }
 ]

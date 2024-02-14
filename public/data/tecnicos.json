@@ -1,103 +1,103 @@
 [
     {
         "id":"1",
-        "nombre":"Caputi A.",
+        "nombre":"Caputi",
         "codigo":"1234"
     },
     
     {
         "id":"2",
-        "nombre":"Rodriguez C.",
+        "nombre":"Rodriguez",
         "codigo":"1234"
     },
 
     {
         "id":"3",
-        "nombre":"Albornoz C.",
+        "nombre":"Albornoz",
         "codigo":"1234"
     },
 
     {
         "id":"4",
-        "nombre":"Lebedinzky M.",
+        "nombre":"Lebedinzky",
         "codigo":"1234"
     },
 
     {
         "id":"5",
-        "nombre":"Lissa A.",
+        "nombre":"Lissa",
         "codigo":"1234"
     },
 
     {
         "id":"6",
-        "nombre":"Leguizamon L.",
+        "nombre":"Leguizamon",
         "codigo":"1234"
     },
 
     {
         "id":"7",
-        "nombre":"Quiroga C.",
+        "nombre":"Quiroga",
         "codigo":"1234"
     },
 
     {
         "id":"8",
-        "nombre":"Ageitos F.",
+        "nombre":"Ageitos",
         "codigo":"1234"
     },
 
     {
         "id":"9",
-        "nombre":"Rolando A.",
+        "nombre":"Rolando",
         "codigo":"1234"
     },
 
     {
         "id":"10",
-        "nombre":"Lijó H.",
+        "nombre":"Lijó",
         "codigo":"1234"
     },
 
     {
         "id":"11",
-        "nombre":"Languer M.",
+        "nombre":"Languer",
         "codigo":"1234"
     },
     
     {
         "id":"12",
-        "nombre":"Trinidad A.",
+        "nombre":"Trinidad",
         "codigo":"1234"
     },
 
     {
         "id":"13",
-        "nombre":"Gonzalez A.",
+        "nombre":"Gonzalez",
         "codigo":"1234"
     },
 
     {
         "id":"14",
-        "nombre":"Panunzio L.",
+        "nombre":"Panunzio",
         "codigo":"1234"
     },
 
     {
         "id":"15",
-        "nombre":"Paiz A.",
+        "nombre":"Paiz",
         "codigo":"1234"
     },
 
     {
         "id":"16",
-        "nombre":"Toloza G.",
+        "nombre":"Toloza",
         "codigo":"1234"
     },
 
     {
         "id":"17",
-        "nombre":"Ruiz Diaz K.",
+        "nombre":"Ruiz Diaz",
         "codigo":"1234"
     }
 ]
