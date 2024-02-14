@@ -3,6 +3,7 @@ import './itemListContainer.css'
 import ItemList from '../itemList/ItemList';
 
 
+
 const ItemListContainer = () => {
 
     const [equipos, setequipos]= useState ([]); 
@@ -22,7 +23,6 @@ const ItemListContainer = () => {
     
     return (
         <div className='container'>
-            <h2 className='container__intro'>Sistema de pase de guardia</h2>
             <div className='container__card'>
                 {equipos.length == 0 ? <h3>Cargando...</h3> 
                 : 

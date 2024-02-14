@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from '../Item/Item';
 import './itemList.css'
+import StockListCointainer from '../stockListContainer/StockListContainer'
 
 const ItemList = ({equipos}) => {
 
@@ -12,6 +13,7 @@ const ItemList = ({equipos}) => {
                     equipo ={equipo}
                 />
             ))}
+            <StockListCointainer/>
         </section>
     );
 };

@@ -2,35 +2,27 @@
     {
         "id": "1",
         "nombre": "Tomógrafo",
-        "Ultimo Reinico":"",
+        "Reinico":"",
         "Técnico":"",
-        "Fecha de Reporte":"",
-        "Número de caso":""
+        "Reporte":"",
+        "caso":""
     },
 
     {
         "id": "2",
         "nombre": "Bomba de Contraste",
-        "Ultimo Reinico":"",
+        "Reinico":"",
         "Técnico":"",
-        "Fecha de Reporte":"",
-        "Número de caso":""
+        "Reporte":"",
+        "caso":""
     },
 
     {
         "id": "3",
         "nombre": "Impersora Laser",
-        "Ultimo Reinico":"",
+        "Reinico":"",
         "Técnico":"",
-        "Fecha de Reporte":"",
-        "Número de caso":""
-    },
-    {
-        "id": "4",
-        "nombre": "Dispenser",
-        "Ultimo Reinico":"",
-        "Técnico":"",
-        "Fecha de Reporte":"",
-        "Número de caso":""
+        "Reporte":"",
+        "caso":""
     }
 ]

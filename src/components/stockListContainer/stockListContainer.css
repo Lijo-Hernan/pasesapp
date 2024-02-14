@@ -5,6 +5,7 @@
     padding: 3vh;
     gap: 1.5vh;
     align-items: first baseline;
+    justify-content: center;
     background-color:  #3f3f3f;
     color: white;
     border-radius: 25px;
@@ -24,7 +25,7 @@
     gap: 8px;
     flex-wrap: wrap;
     width: auto;
-    font-size: 1rem;
+    font-size: 1.5rem;
     justify-content: space-between;
 }
 
@@ -40,16 +41,48 @@
 .stockItem__titulo {
     padding-left: 15px;
     font-size: 1.5rem;
+    align-self: center;
 }
 
 .stockNumber {
-    font-size: xx-large;
+    font-size: 2rem;
     padding: 4px;
     font-style: bold;
 }
 
 .imagenParaMostrar {
     object-fit: contain;
-    margin-left: 8vh;
-    height: 8vh;
+    margin-left: 6vh;
+    height: 6vh;
+    align-self: center;
+    justify-self: center;
+}
+
+.stock__boton {
+        background: #1d28f2;
+        background-image: -webkit-linear-gradient(top, #1d28f2, #2bb87f);
+        background-image: -moz-linear-gradient(top, #1d28f2, #2bb87f);
+        background-image: -ms-linear-gradient(top, #1d28f2, #2bb87f);
+        background-image: -o-linear-gradient(top, #1d28f2, #2bb87f);
+        background-image: linear-gradient(to bottom, #1d28f2, #2bb87f);
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 50px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        margin: 0 1.5rem;
+}
+
+.stock__boton:hover {
+    background: #fc0808;
+    background-image: -webkit-linear-gradient(top, #fc0808, #ff2474);
+    background-image: -moz-linear-gradient(top, #fc0808, #ff2474);
+    background-image: -ms-linear-gradient(top, #fc0808, #ff2474);
+    background-image: -o-linear-gradient(top, #fc0808, #ff2474);
+    background-image: linear-gradient(to bottom, #fc0808, #ff2474);
+    text-decoration: none;
+    cursor: pointer;
 }

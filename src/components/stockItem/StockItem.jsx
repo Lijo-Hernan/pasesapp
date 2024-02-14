@@ -20,6 +20,7 @@ const Item = ({stock}) => {
             <p className='stockItem__titulo'>{stock.nombre} : <span className='stockNumber'>{stock.stock}</span>  {stock.presentacion} 
             {imagenPAraMostrar} 
             </p>
+            <button className='stock__boton'>Corregir</button>
         </article>
     </>
     );
