@@ -1,8 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import './itemListContainer.css'
 import ItemList from '../itemList/ItemList';
-
-
 
 const ItemListContainer = () => {
 

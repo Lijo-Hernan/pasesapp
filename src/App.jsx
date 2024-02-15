@@ -4,6 +4,8 @@ import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import ItemListContainer from './components/itemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer'
+import ValidForm from './components/validForm/ValidForm'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +21,7 @@ function App() {
             </button>
           </div> */}
     <ItemDetailContainer/>
+    <ValidForm/>
     <Footer/>
     </>
   )

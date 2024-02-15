@@ -1,0 +1,15 @@
+.valid__form {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    border: red solid 2px;
+    font-size: 2rem;
+    align-items: center;
+    width: 90%;
+    background: rgb(110, 110, 110)
+}
+
+.validar {
+    margin: 2rem;
+    padding: 1rem 5rem;
+}
