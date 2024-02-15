@@ -16,6 +16,7 @@
     border-bottom: solid 2px white;
     width: 100%;
     justify-self: center;
+    margin-bottom: 2rem;
 }
 
 .item__span {
@@ -30,10 +31,10 @@
     font-size: 1.5rem;
 }
 .estado {
-    height: 70%;
+    height: 50%;
     position: absolute;
     right: 0;
-    top: 15%;
+    top: 25%;
     object-fit: cover;
 }
 

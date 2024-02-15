@@ -19,7 +19,7 @@ const Item = ({equipo}) => {
         <article className='item__card'>
             <h2 className='item__titulo'>{equipo.nombre}</h2>
                 {equipo.reporte === "" ?
-                    <div>
+                    <div className='item__inner'>
                         <button className='item__boton'>Reportar un problema</button>
                         <span className='item__span'>
                             <p className='item__p'>Fecha de reinicio: {equipo.reinicio}</p>
