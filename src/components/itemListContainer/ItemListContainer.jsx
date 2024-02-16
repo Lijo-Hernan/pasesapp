@@ -15,7 +15,7 @@ const ItemListContainer = () => {
                 .catch ((error)=> console.log(error))
             }
             fetchEquipos()
-            }, 1000)
+            }, 200)
     },[])
     
     return (

@@ -11,6 +11,7 @@ const ItemDetailContainer = () => {
 
     useEffect (()=> {
 
+        setTimeout (()=>{
             const fetchData = ()=> {
                 fetch("/data/equipos.json") 
                 .then ((response) => response.json())
@@ -21,6 +22,7 @@ const ItemDetailContainer = () => {
                 .catch ((error)=> console.log(error))
             }
             fetchData()
+        }, 200)
     },[ideq])
 
     return (
@@ -28,7 +30,7 @@ const ItemDetailContainer = () => {
             <div className='detailContainer'>
             <section className='detailContainer__card'>
                 {eq ? <ItemDetail eq={eq}/> 
-                : <Error/>}
+                : <h3>Cargando...</h3>}
             </section>
         </div>
             

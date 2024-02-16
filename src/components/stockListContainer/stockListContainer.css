@@ -53,8 +53,8 @@
 
 .imagenParaMostrar {
     object-fit: contain;
-    margin-left: 6vh;
-    height: 6vh;
+    margin-left: 5vh;
+    height: 5vh;
     align-self: center;
     justify-self: center;
 }

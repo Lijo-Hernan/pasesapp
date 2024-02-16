@@ -6,7 +6,9 @@
         "tecnico":"Lijó",
         "reporte":"",
         "caso":"",
-        "descripcion":""
+        "descripcion":"",
+        "telefono": "0800-444-2411",
+        "serie":"884521"
     },
 
     {
@@ -16,7 +18,9 @@
         "tecnico":"",
         "reporte":"10/02/2024",
         "caso":"14578fgh",
-        "descripcion":"Falla en la pantalla de la bomba"
+        "descripcion":"Falla en la pantalla de la bomba",
+        "telefono": "0800-444-2411",
+        "serie":"884521"
     },
 
     {
@@ -26,6 +30,8 @@
         "tecnico":"",
         "reporte":"",
         "caso":"",
-        "descripcion":""
+        "descripcion":"",
+        "telefono": "0800-444-2411",
+        "serie":"884521"
     }
 ]
