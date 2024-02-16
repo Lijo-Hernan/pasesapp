@@ -1,22 +1,24 @@
 import React, {useState,useEffect} from 'react';
 import './stockListContainer.css'
 import StockList from '../stockList/StockList'
+import {collection, getDocs} from 'firebase/firestore'
+import {db} from '../../firebase/config'
 
 const StockListContainer = () => {
 
-    const [stocks, setstocks]= useState ([]); 
+    const [stocks, setStocks]= useState ([]); 
 
     useEffect (()=> {
 
-        setTimeout (()=>{
-                const fetchstocks = ()=> {
-                fetch("./public/data/stock.json") 
-                .then ((response) => response.json())
-                .then ((data)=> setstocks(data))
-                .catch ((error)=> console.log(error))
-            }
-            fetchstocks()
-        }, 1000)
+        const fetchStock = collection(db, "stock");
+        getDocs (fetchStock)
+        .then ((resp)=> {
+            setStocks (
+                resp.docs.map ((doc) =>{
+                    return {...doc.data() , id: doc.id}
+                })
+            )
+        }) 
     },[])
     
     return (

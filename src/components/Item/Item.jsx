@@ -1,5 +1,6 @@
 import React from 'react';
 import './item.css'
+
 import ItemReporte from '../itemReporte/ItemReporte';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ const Item = ({equipo}) => {
 
     let estado;
 
-    if (equipo.reporte === "") {
+    if (equipo.descripcion === "") {
         estado = <img className='estado' src='../public/data/checkMark.png' alt='checkMark' />;
     }else {
         estado = <img className='estado' src='../public/data/xMArk.png' alt='xMArk' />;
@@ -18,7 +19,7 @@ const Item = ({equipo}) => {
     <>
         <article className='item__card'>
             <h2 className='item__titulo'>{equipo.nombre}</h2>
-                {equipo.reporte === "" ?
+                {equipo.descripcion === "" ?
                     <div className='item__inner'>
                         <button className='item__boton'>Reportar un problema</button>
                         <span className='item__span'>

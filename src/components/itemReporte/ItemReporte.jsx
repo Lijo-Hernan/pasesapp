@@ -1,7 +1,11 @@
 import React from 'react';
 import './itemReporte.css'
+import {collection, getDocs} from 'firebase/firestore'
+import {db} from '../../firebase/config'
 
 const ItemReporte = ({equipo}) => {
+
+
     return (
         <div className='reporte'>
             <p className='reporte__p'>Fecha de reporte: {equipo.reporte}</p>

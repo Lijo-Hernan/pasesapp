@@ -1,21 +1,22 @@
 import React, {useState,useEffect} from 'react';
 import ItemList from '../itemList/ItemList';
+import {collection, getDocs} from 'firebase/firestore'
+import {db} from '../../firebase/config'
 
 const ItemListContainer = () => {
 
     const [equipos, setequipos]= useState ([]); 
 
     useEffect (()=> {
-
-        setTimeout (()=>{
-        const fetchEquipos = ()=> {
-                fetch("./public/data/equipos.json") 
-                .then ((response) => response.json())
-                .then ((data)=> setequipos(data))
-                .catch ((error)=> console.log(error))
-            }
-            fetchEquipos()
-            }, 200)
+        const fetchEquipos = collection(db, "equipos");
+        getDocs (fetchEquipos)
+        .then ((resp)=> {
+            setequipos (
+                resp.docs.map ((doc) =>{
+                    return {...doc.data() , id: doc.id}
+                })
+            )
+        }) 
     },[])
     
     return (
