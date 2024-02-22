@@ -1,7 +1,29 @@
-import React from 'react';
-import './itemDetail.css'
+import React, {useState} from 'react';
+import './itemDetail.css';
+import {useForm} from "react-hook-form";
+import {collection, addDoc} from 'firebase/firestore'
+import {db} from '../../firebase/config'
 
 const ItemDetail = ({eq}) => {
+
+        const [apellido, setApellido] = useState('');
+    
+        const handleChange = (event) => {
+            const textoMayusculas = event.target.value.toUpperCase();
+            setApellido(textoMayusculas);
+        };
+
+
+    const {register, formState:{errors}, handleSubmit, watch} = useForm();
+
+
+    const reportado = watch('pregunta')
+
+    const onSubmit = (datos)=> {
+        const reporte =collection (db,'reportes')
+        addDoc (reporte, datos);
+        alert("Reporte enviado correctamente, muchas gracias" )
+    }
 
 
     return (
@@ -9,23 +31,37 @@ const ItemDetail = ({eq}) => {
         <div className='item__card detail__card'>
                 <h2 className='item__titulo'>Reporte de falla para {eq.nombre}</h2>
             <div className='seccionDatos'>
-            <form action="" className='form'>
+            <form onSubmit={handleSubmit(onSubmit)} className='form'>
                 <span>
                     <label htmlFor="fecha">Fecha: </label>
-                    <input type="date" id='fecha'/></span>
-                <span>
-                    <label htmlFor="caso">Numbero de caso: </label>
-                    <input type="text" id='caso'/></span>
+                    <input type="date" id='fecha' {...register('fecha', {required:true})}/>
+                    {errors.fecha?.type === 'required' && <p>Este campo es obligatorio</p>}
+                </span>
                 <span>
                     <label htmlFor="descripcion">Descripciòn: </label>
-                    <textarea id='descripcion' /></span>
+                    <textarea id='descripcion' {...register('descripcion', {required:true})} />
+                    {errors.descripcion?.type === 'required' && <p>Este campo es obligatorio</p>}
+                </span>
                 <span>
                     <label htmlFor="apellido">Apellido: </label>
-                    <input type="text" id='apellido' /></span>
+                    <input type="text" id='apellido'{...register('apellido', {required:true})} value={apellido} onChange={handleChange} />
+                    {errors.apellido?.type === 'required' && <p>Este campo es obligatorio</p>}
+                </span>
                 <span>
                     <label htmlFor="clave">Codigo personal: </label>
-                    <input type="password" name="clave" id="clave" />
+                    <input type="password" id='clave' {...register('clave', {required:true})} />
+                    {errors.clave?.type === 'required' && <p>Este campo es obligatorio</p>}
                 </span>
+                <span>
+                    <label htmlFor="pregunta">Se reporto a servicio tencnico?</label>
+                    <input type="checkbox" id="pregunta" {...register ('pregunta')} />
+                </span>
+                {reportado && (
+                <span>
+                    <label htmlFor="caso">Numbero de caso: </label>
+                    <input type="text" id='caso' {...register('caso')}/>
+                </span>)}
+
                 <button type='submit' className='datos__boton'>Enviar</button>
             </form>
             <section className='datosServicio'>

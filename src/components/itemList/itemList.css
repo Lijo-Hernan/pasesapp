@@ -6,7 +6,6 @@
     align-items: center;
     margin: 0.5vh;
     overflow: hidden;
-    border: red solid 2px;
 }
 
 @media (max-width: 768px) {

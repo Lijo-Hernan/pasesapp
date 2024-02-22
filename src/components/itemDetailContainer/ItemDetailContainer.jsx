@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../itemDetail/ItemDetail';
-import Error from '../error/Error';
+import {collection, getDocs} from 'firebase/firestore'
+import {db} from '../../firebase/config'
 
 const ItemDetailContainer = () => {
 
@@ -10,20 +11,17 @@ const ItemDetailContainer = () => {
     const {ideq} = useParams()
 
     useEffect (()=> {
-
-        setTimeout (()=>{
-            const fetchData = ()=> {
-                fetch("/data/equipos.json") 
-                .then ((response) => response.json())
-                .then ((data)=>{ 
-                    const eqEncontrado = data.find ((item) => item.id == "1")
-                    seteq(eqEncontrado)
+        const fetchEquipos = collection(db, "equipos");
+        getDocs (fetchEquipos)
+        .then ((resp)=> {
+            seteq (
+                resp.docs.map ((doc) =>{
+                    return {...doc.data() , id: doc.id}
                 })
-                .catch ((error)=> console.log(error))
-            }
-            fetchData()
-        }, 200)
+            )
+        }) 
     },[ideq])
+    
 
     return (
         <div>
