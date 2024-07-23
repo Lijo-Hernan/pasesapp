@@ -11,8 +11,8 @@ const Item = ({equipo}) => {
     let estado;
 
     if (equipo.descripcion === "") {
-        estado = <img className={classes.estado} src='../public/data/ctIco.jpg' 
-        alt={equipo.nombre} />;
+        estado = <img className={classes.estado} src='https://firebasestorage.googleapis.com/v0/b/pasesapp-d01af.appspot.com/o/tildeSinFondo.png?alt=media&token=6bfda763-b451-4128-bc5b-c4837592ed24' 
+        alt='checkMark' />;
     }else {
         estado = <img className={classes.estado} src='https://firebasestorage.googleapis.com/v0/b/pasesapp-d01af.appspot.com/o/xsinFondo.png?alt=media&token=8955479b-fd5e-4792-b7ba-8511e6b98361' 
         alt='xMArk' />;
@@ -34,15 +34,12 @@ const Item = ({equipo}) => {
 
     return (
     <>
-    <section className={classes.cardContainer}>
-            <article className={classes.item__card}>
-                <span className={classes.item__titulo}>
-                    <span className={classes.item__estado}>{estado}</span>
-                </span>
-                    <h2 className={classes.nombre}>{equipo.nombre}</h2>
-            </article>
-        </section>
-                {/* {equipo.descripcion === "" ?
+        <article className={classes.item__card}>
+            <span className={classes.item__titulo}>
+                <h2 className={classes.in__titulo}>{equipo.nombre}</h2>
+                <span className={classes.item__estado}>{estado}</span>
+            </span>
+                {equipo.descripcion === "" ?
                     <div className={classes.item__inner}>
                         <Link to={`reporte/${equipo.id}`} className='btn btn-danger'>Reportar un problema</Link>
                         <span className={classes.item__span}>
@@ -54,7 +51,7 @@ const Item = ({equipo}) => {
                         </Button>
                     </div>
                     : <ItemReporte equipo={equipo}/>}
-        </article> */}
+        </article>
         <Offcanvas show={showOffcanvas} onHide={handleClose} className={classes.canvasBody}>
 
             <Offcanvas.Body>
