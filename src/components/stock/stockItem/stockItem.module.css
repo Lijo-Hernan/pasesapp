@@ -18,8 +18,7 @@
     border: white solid 2px;
     border-radius: 5px;
     justify-content: space-between;
-    margin: 1vh 0vh;
-    
+    margin: 1vh;
 }
 
 .imagenParaMostrar {
@@ -29,6 +28,7 @@
     height: 5vh;
     align-self: center;
     justify-self: center;
+    padding-bottom: 1vh;
 }
 
 .boton {

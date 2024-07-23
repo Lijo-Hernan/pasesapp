@@ -9,6 +9,7 @@ import Reinicio from './components/items/reinicio/Reinicio'
 import FinCaso from './components/items/finCaso/FinCaso'
 import StockModifier from './components/stock/stockModifier/StockModifier'
 import HistorialListContainer from './components/historial/historialListContainer/HistorialListContainer'
+import ItemIndividualContainer from './components/items/itemIndividualContainer/ItemIndividualContainer'
 import { useState, useEffect } from 'react'
 import { AuthProvider } from './context/authContext'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -52,6 +53,7 @@ if(cargando) {
             <Route path='/historial' element={<HistorialListContainer introduccion={`Listado completo de reportes` }/>}/>
             <Route path='/' element={<ItemListContainer/>} usuarioGlobal={usuarioGlobal}/>
             <Route path='/reporte/:id' element={<ItemDetailContainer/>}/>
+            <Route path='/estado/:id' element={<ItemIndividualContainer/>}/>
             <Route path='*' element={<Error/>}/>
             <Route path='/stock/stockmodifier/:idStock' element={<StockModifier/>}/>
             <Route path='/reinicio/:id' element={<Reinicio/>}/>

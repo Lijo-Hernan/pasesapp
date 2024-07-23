@@ -1,5 +1,4 @@
 .cardContainer {
-    border: yellow solid 3px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -8,37 +7,36 @@
 .listContainer {
     display:flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     width: auto;
     margin: 0.5vh;
     margin-top: 2.5vh;
     overflow: hidden;
 }
 
-.historial{
+.historial__container{
     display: flex;
     flex-direction: column;
-    padding: 3vh;
-    align-items: first baseline;
+    align-items: center;
+    justify-content: center;
+}
+
+.historial {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vh;
+    align-items: center;
     border-radius: 25px;
     width: fit-content;
     margin: 1vh;
     position: relative;
     flex-wrap: wrap;
-    border: green solid 3px;
-    text-decoration: none;
+    background-color: rgb(2, 142, 167);
 }
 
 .historial__card {
-    display: flex;
-    width: 100%;
-    border-radius: 25px;
-    background-color:  rgb(133, 132, 132);
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    border: solid red 3px;
+    height: 100%;
+    object-fit: contain;
 }
 
 .historial__img{
@@ -51,9 +49,6 @@
     color: none;
     color: black;
 }
-
-
-
 
 @media (max-width: 768px) {
     .listContainer {

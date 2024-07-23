@@ -14,13 +14,13 @@ const itemList = ({equipos}) => {
                     equipo ={equipo}
                 />
             ))}
-            <span>
+            <span className={classes.historial__container}>
             <Link to='/historial' className={classes.historial}>
                 <article className={classes.historial__card}>
                     <img src="../public/data/ctIco.jpg" alt="Historial" className={classes.historial__img}/>
                 </article>
-                <p className={classes.historial__p}>Historial de Reportes</p>
             </Link>
+                <p className={classes.historial__p}>Historial de Reportes</p>
             </span>
         </section>
         <StockListContainer/>

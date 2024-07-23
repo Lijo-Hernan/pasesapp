@@ -11,7 +11,6 @@ import { useAuth } from '../../../context/authContext';
 
 const ItemDetail = ({eq}) => {
     const [apellido, setApellido] = useState('');
-    // const [eqRep, setEqRep] =useState('');
 
     const auth = useAuth();
 
@@ -45,7 +44,6 @@ const ItemDetail = ({eq}) => {
                 if (queryDocumentSnapshot.exists && queryDocumentSnapshot.data()){
                 const data = queryDocumentSnapshot.data()
                 const adaptEq = {id: queryDocumentSnapshot.id, ...data}
-                // setEqRep(adaptEq)
             } else{setError(true)}
         })
             .catch(() => {
