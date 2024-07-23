@@ -1,0 +1,46 @@
+.stockContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    gap: 1.5vh;
+    justify-items: center;
+    background-color:  rgb(145, 145, 145);
+    color: white;
+    border-radius: 25px;
+    margin: 1vh;
+    overflow: hidden;
+    width: 90%;
+}
+
+.stockContainer__intro {
+    border-bottom: solid white 2px;
+    justify-self: center;
+    width: 100%;
+}
+
+.stockItem__titulo {
+    padding-left: 15px;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.stockNumber {
+    font-size: 2rem;
+    padding: 4px;
+    font-style: bold;
+}
+
+.imagenParaMostrar {
+    object-fit: contain;
+    margin-left:  2vh;
+    margin-right: 2vh;
+    height: 5vh;
+    align-self: center;
+    justify-self: center;
+}
+
+.loader__cont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
