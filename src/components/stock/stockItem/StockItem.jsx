@@ -24,7 +24,6 @@ const Item = ({stock}) => {
             <p className={classes.stockItem__titulo}>{stock.nombre} : <span className={classes.stockNumber}>{stock.stock}</span>  {stock.presentacion} 
             {imagenPAraMostrar} 
             </p>
-            {/* <Link to={`stockModifier/${stock.id}`}  className='btn btn-primary'>Corregir</Link> */}
             <Link to={`stock/stockmodifier/${stock.id}`}  className={`btn btn-primary ${classes.boton}`}>Corregir</Link>
         </article>
     </>

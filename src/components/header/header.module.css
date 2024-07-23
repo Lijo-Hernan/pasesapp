@@ -8,7 +8,7 @@
     position: relative;
     justify-content: center;
     align-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .header__link {
@@ -53,6 +53,10 @@
     margin-top: 0.5%;
     font-size: 1rem;
     align-items: center;
+}
+
+.usuario__p{
+    margin-bottom: 0;
 }
 
 @media (max-width: 910px) {

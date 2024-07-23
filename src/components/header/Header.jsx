@@ -32,7 +32,7 @@ const header = () => {
                 <h3 className={classes.header__h2}>Pases de Guardia</h3>
             </div>  
             <span className={classes.usuario}>    
-                <p>Usuario: {nombreParaMostrar}</p>
+                <p className={classes.usuario__p}>Usuario: {nombreParaMostrar}</p>
                 <Button className={classes.header__boton} onClick={() => handleLogOut()}>
                 Cerrar sesion
                 </Button>
