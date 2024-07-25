@@ -5,7 +5,8 @@
 }
 
 .stockNumber {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     padding: 4px;
     font-style: bold;
 }
@@ -28,7 +29,7 @@
     height: 5vh;
     align-self: center;
     justify-self: center;
-
+    margin-bottom: 5px;
 }
 
 .boton {

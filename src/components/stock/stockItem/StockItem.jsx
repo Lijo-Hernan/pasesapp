@@ -21,7 +21,7 @@ const Item = ({stock}) => {
     return (
     <>
         <article className={classes.stockItem__card}>
-            <p className={classes.stockItem__titulo}>{stock.nombre} : <span className={classes.stockNumber}>{stock.stock}</span>  {stock.presentacion} 
+            <p className={classes.stockItem__titulo}>{stock.nombre} : <span className={classes.stockNumber}>{stock.stock}</span>{stock.presentacion} 
             {imagenPAraMostrar} 
             </p>
             <Link to={`stock/stockmodifier/${stock.id}`}  className={`btn btn-primary ${classes.boton}`}>Corregir</Link>

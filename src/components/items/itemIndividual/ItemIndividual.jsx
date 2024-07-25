@@ -32,28 +32,32 @@ const itemIndividual = ({eq}) => {
 
     return (
             <>
+            <div className={classes.container}>
+            <div className={classes.item__container}>
             <article className={classes.item__card}>
-                <span className={classes.item__titulo}>
-                    <span className={classes.item__estado}>{estado}</span>
-                </span>
                     <h2 className={classes.nombre}>{eq.nombre}</h2>
+                    <span className={classes.item__estado}>{estado}</span>
             </article>
                 <div>
                     {eq.descripcion === "" ?
-                            <div className={classes.item__inner}>
+                        <div className={classes.item__inner}>
+                            <span className={classes.item__span}>
+                                <p className={classes.item__p}>Fecha de reinicio: {formattedDate}</p>
+                                <p className={classes.item__p}>Técnico: {eq.tecnico}</p>
+                            </span>
+                            <span className={classes.botones}>
                                 <Link to={`/reporte/${eq.id}`} className='btn btn-danger'>Reportar un problema</Link>
-                                <span className={classes.item__span}>
-                                    <p className={classes.item__p}>Fecha de reinicio: {formattedDate}</p>
-                                    <p className={classes.item__p}>Técnico: {eq.tecnico}</p>
-                                </span>
                                 <Button variant="primary" onClick={handleShow}>
                                     Reportar Reinicio
                                 </Button>
-                            </div>
+                            </span>
+                        </div>
                             : <ItemReporte equipo={eq}/>}
                     
                 </div>
-        
+            </div>
+            </div>
+
             <Offcanvas show={showOffcanvas} onHide={handleClose} className={classes.canvasBody}>
         
             <Offcanvas.Body>

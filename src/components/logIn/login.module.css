@@ -1,15 +1,13 @@
 .login__body {
     height: 100vh;
+    width: 100vw;
     padding: 0;
     margin: 0;
     background-origin: border-box;
     align-content: center;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/pasesapp-d01af.appspot.com/o/Tomo2.jpg?alt=media&token=71d1b34d-3bd1-40fb-832a-f3463749a134);
-    object-fit: scale-down;
     padding: 2rem 0;
     background-size: cover;
-    background-repeat: no-repeat; 
-
 }
 
 .form__container {

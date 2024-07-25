@@ -23,7 +23,7 @@ const StockListContainer = () => {
     
     return (
         <div className={classes.stockContainer}>
-            <h1 className={classes.stockContainer__intro}>Control de Stock</h1>
+            <h2 className={classes.stockContainer__intro}>Control de Stock</h2>
             <div className={classes.stockContainer__card}>
                 {stocks.length == 0 ? <div className={classes.loader__cont}><span><Loader/></span></div> 
                 : 

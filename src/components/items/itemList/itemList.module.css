@@ -31,7 +31,7 @@
     margin: 1vh;
     position: relative;
     flex-wrap: wrap;
-    background-color: rgb(2, 142, 167);
+    background-color: rgb(28, 119, 0);
 }
 
 .historial__card {
@@ -48,6 +48,23 @@
     text-decoration: none;
     color: none;
     color: black;
+}
+
+.reinicio__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.reinicio__P{
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.imagenAdv {
+    height: 3rem;
 }
 
 @media (max-width: 768px) {
