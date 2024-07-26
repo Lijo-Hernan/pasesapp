@@ -154,8 +154,8 @@ const handlePassword = async (email) => {
         window.location.href='/'
     };
 
-    const tiempoEspera = 2 * 60 * 60 * 1000;
-    // 2 * 60 * 60 * 1000; // 2 horas en milisegundos
+    const tiempoEspera = 7200000;
+    // 2 * 60 * 60 * 1000; // 7200000 // 2 horas en milisegundos
     // 3 * 3600 * 1000; // 3 horas en milisegundos
     // const tiempoEspera = 120000; // 2 min  en milisegundos
     
