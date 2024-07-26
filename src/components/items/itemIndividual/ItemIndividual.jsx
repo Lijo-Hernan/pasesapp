@@ -50,6 +50,7 @@ const itemIndividual = ({eq}) => {
                                 <Button variant="primary" onClick={handleShow}>
                                     Reportar Reinicio
                                 </Button>
+                                <Link to='/' className='btn btn-success'>Volver al inicio</Link>
                             </span>
                         </div>
                             : <ItemReporte equipo={eq}/>}

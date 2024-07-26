@@ -62,9 +62,6 @@ const itemList = ({equipos}) => {
             </span>
         </section>
         {estado}
-        {/* <span className={classes.reinicio__container}>
-        <p className={classes.reinicio__p}>Ultimo reinicio del Tomógrafo: {formattedDate}</p>
-        </span> */}
         <StockListContainer/>
         </div>
     );

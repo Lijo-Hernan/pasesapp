@@ -12,6 +12,9 @@ const header = () => {
             <div className={classes.footer__mail}>
                 <b>Email:</b><a href="lijo.hernanpablo@gmail.com">lijo.hernanpablo@gmail.com</a>
             </div>
+            <div className={classes.footer__mail}>
+                <h5 className={classes.footer__h3}>Servicio de limpieza del hospital: 15-3193-3562</h5>
+            </div>
         </footer>
     );
 };

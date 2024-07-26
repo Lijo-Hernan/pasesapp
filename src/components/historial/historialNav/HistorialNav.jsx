@@ -37,6 +37,7 @@ const HistorialNav = () => {
                             return <Link key={cat.id} to={`/historial/${cat.nombre}`} className={classes.navbar__btn}>
                                     {cat.nombre}</Link>
                         })}
+                        <Link to='/' className={classes.navbar__btn}>Volver al inicio</Link>
                     </div>
                 </nav>
             </span>

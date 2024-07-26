@@ -3,6 +3,7 @@ import { Offcanvas, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import classes from './itemReporte.module.css'
 import FinCaso from '../finCaso/FinCaso';
+import { Link } from 'react-router-dom';
 
 
 const ItemReporte = ({equipo}) => {
@@ -24,7 +25,6 @@ const ItemReporte = ({equipo}) => {
 
     return (
         <>
-
             <div className={classes.reporte}>
                 <p className={classes.reporte__p}>Fecha de reporte: {formattedDate}</p>
                 <p className={classes.reporte__p}>Numero de caso: {numCaso}</p>
@@ -33,6 +33,7 @@ const ItemReporte = ({equipo}) => {
                     <Button variant="success" onClick={handleShow}>
                         Finalizar caso
                     </Button>
+                    <Link to='/' className="btn btn-primary">Volver al inicio</Link>
                 </span>
             </div>
 
