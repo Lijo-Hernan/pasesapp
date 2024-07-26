@@ -19,7 +19,7 @@ const Item = ({equipo}) => {
                 <Link to={`estado/${equipo.id}`} className={classes.linkContainer}>
                     <article className={estado}>
                         <span className={classes.item__estado}>
-                            <img className={classes.estado} src='../public/data/ctIco.jpg' alt={equipo.nombre} />
+                            <img className={classes.estado} src={equipo.img} alt={equipo.nombre} />
                         </span>
                     </article>
                     <h2 className={classes.nombre}>{equipo.nombre}</h2>

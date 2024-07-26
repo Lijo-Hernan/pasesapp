@@ -6,7 +6,7 @@ import StockListContainer from '../../stock/stockListContainer/StockListContaine
 
 const itemList = ({equipos}) => {
 
-    const adv= <img className={classes.imagenAdv} src='https://firebasestorage.googleapis.com/v0/b/pasesapp-d01af.appspot.com/o/warning.png?alt=media&token=88a75a30-3ab7-4a41-9796-f7afd88b7c7c' 
+    const adv= <img className={classes.imagenAdv} src='https://firebasestorage.googleapis.com/v0/b/pasesapp-d01af.appspot.com/o/warning.png?alt=media&token=da3b9ad8-5ddd-4335-a2e6-2508644b0673' 
     alt='warning' />
 
     let estado
@@ -42,8 +42,6 @@ const itemList = ({equipos}) => {
         }
     }
 
-
-
     return (
         <div className={classes.listContainer}>
         <section className={classes.cardContainer} >
@@ -56,7 +54,8 @@ const itemList = ({equipos}) => {
             <span className={classes.historial__container}>
             <Link to='/historial' className={classes.historial}>
                 <article className={classes.historial__card}>
-                    <img src="../public/data/ctIco.jpg" alt="Historial" className={classes.historial__img}/>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/pasesapp-d01af.appspot.com/o/ReporteSinFondo.png?alt=media&token=6746ff34-8100-4de2-9d36-bf8ef9a49ea2" 
+                    alt="Historial" className={classes.historial__img}/>
                 </article>
             </Link>
                 <p className={classes.historial__p}>Historial de Reportes</p>
