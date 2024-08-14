@@ -10,6 +10,7 @@ import FinCaso from './components/items/finCaso/FinCaso'
 import StockModifier from './components/stock/stockModifier/StockModifier'
 import HistorialListContainer from './components/historial/historialListContainer/HistorialListContainer'
 import ItemIndividualContainer from './components/items/itemIndividualContainer/ItemIndividualContainer'
+import ControlListContainer from './components/controlStock/controlListContainer/ControlListContainer'
 import { useState, useEffect } from 'react'
 import { AuthProvider } from './context/authContext'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -51,6 +52,7 @@ if(cargando) {
       <Header/>
         <Routes>
             <Route path='/historial' element={<HistorialListContainer introduccion={`Listado completo de reportes` }/>}/>
+            <Route path='/controlStock' element={<ControlListContainer introduccion={`Control de consumos` }/>}/>
             <Route path='/' element={<ItemListContainer/>} usuarioGlobal={usuarioGlobal}/>
             <Route path='/reporte/:id' element={<ItemDetailContainer/>}/>
             <Route path='/estado/:id' element={<ItemIndividualContainer/>}/>
@@ -58,7 +60,8 @@ if(cargando) {
             <Route path='/stock/stockmodifier/:idStock' element={<StockModifier/>}/>
             <Route path='/reinicio/:id' element={<Reinicio/>}/>
             <Route path='/items/fincaso/:id' element={<FinCaso/>}/>
-            <Route path='/historial/:categoria' element={<HistorialListContainer introduccion={`Listado reportes segun equipo` }/>}/>   
+            <Route path='/historial/:categoria' element={<HistorialListContainer introduccion={`Listado reportes segun equipo` }/>}/>
+            <Route path='/controlStock/:insumo' element={<ControlListContainer introduccion={`Control por insumo especifico` }/>}/>   
         </Routes>
       <Footer/>
         

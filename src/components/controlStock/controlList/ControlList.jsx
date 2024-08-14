@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
-import classes from './historialList.module.css'
-import HistorialItem from '../hisptorialItem/HistorialItem'
-import Loader from '../../loader/Loader'
+import React from 'react';
+import { useState } from 'react';
+import classes from './controlList.module.css'
+import ControlItem from '../controlItem/ControlItem';
 
 
-const HistorialList = ({reportes}) => {
-
+const ControlList = ({reportes}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10; 
+    const itemsPerPage = 10; // Número de reportes por página
 
     const sortedReportes = reportes.sort((a, b) => b.fecha - a.fecha);
 
@@ -18,7 +17,7 @@ const HistorialList = ({reportes}) => {
     const currentReportes = sortedReportes.slice(indexOfFirstItem, indexOfLastItem);
     const totalPages = Math.ceil(reportes.length / itemsPerPage);
 
-
+    // Cambiar de página
     const handleNextPage = () => {
         if (currentPage < Math.ceil(reportes.length / itemsPerPage)) {
             setCurrentPage(prevPage => prevPage + 1);
@@ -41,7 +40,7 @@ const HistorialList = ({reportes}) => {
             </div>
             <section className={classes.listContainer}>
                 {currentReportes.map(reporte => (
-                    <HistorialItem key={reporte.id} reporte={reporte} />
+                    <ControlItem key={reporte.id} reporte={reporte} />
                 ))}
             </section>
         </div>
@@ -49,19 +48,18 @@ const HistorialList = ({reportes}) => {
 
 
 
+
+
     // const [reportesOrdenados, setReportesOrdenados] = useState(reportes);
-
-
     // useEffect(() => {
     //     const orderedReports = [...reportes].sort((a, b) => b.fecha - a.fecha );
     //     setReportesOrdenados(orderedReports);
     //     }, [reportes]);
 
-
     // return (
     //     <section className={classes.listContainer}>
     //         {reportesOrdenados.map((reporte)=> (
-    //             <HistorialItem 
+    //             <ControlItem 
     //                 key = {reporte.id}
     //                 reporte ={reporte}
     //             />
@@ -70,4 +68,4 @@ const HistorialList = ({reportes}) => {
     // );
 };
 
-export default HistorialList;
+export default ControlList;

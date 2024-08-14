@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import {doc, getDoc, updateDoc, Timestamp} from 'firebase/firestore'
+import {doc, getDoc, updateDoc, Timestamp, collection, addDoc} from 'firebase/firestore'
 import {db} from '../../firebase/config'
 import Loader from '../../loader/Loader';
 import classes from './stockModifier.module.css'
@@ -22,6 +22,10 @@ const StockModifier = () => {
     const {register, handleSubmit } = useForm();
 
     const productDoc = doc(db, 'stock', idStock)
+
+    const actualizacion =collection (db,'stockActual')
+
+
 
     useEffect (()=>{
 
@@ -48,6 +52,7 @@ const StockModifier = () => {
     } 
 
     const stockActual = async(data) => {
+
         Swal.fire({
             title: `Stock de ${stockItem.nombre} actualizado`,
             text: 'Por favor verifique el cambio en la lista',
@@ -55,13 +60,20 @@ const StockModifier = () => {
             confirmButtonText: 'Cerrar',
             background: 'green',
             color: 'white',
-            confirmButtonColor:'red',
-            width:'25em'
+            width:'25em',
+            didOpen: () => {
+            Swal.getConfirmButton().disabled = true;
+            setTimeout(() => {
+            Swal.getConfirmButton().disabled = false;
+            }, 1000);},
+            confirmButtonColor:'red'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href='/'
             }})
-        await updateDoc (productDoc, {stock:data.stock, fecha:Timestamp.fromDate(new Date()), Apellido:data.apellido, logStock: nombreParaMostrar})
+        await addDoc (actualizacion, {stock:data.stock, fecha:Timestamp.fromDate(new Date()), Apellido:data.apellido, logStock: nombreParaMostrar, nombre: stockItem.nombre});
+        await updateDoc (productDoc, {stock:data.stock, fecha:Timestamp.fromDate(new Date()), Apellido:data.apellido, logStock: nombreParaMostrar});
+        
     }
     
     return (
