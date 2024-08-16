@@ -25,7 +25,7 @@ const StockModifier = () => {
 
     const actualizacion =collection (db,'stockActual')
 
-
+    let entrada = false
 
     useEffect (()=>{
 
@@ -53,6 +53,13 @@ const StockModifier = () => {
 
     const stockActual = async(data) => {
 
+        const numero = parseInt(data.stock, 10);
+        console.log({numero})
+
+        if (numero >= stockItem.stock) {
+                entrada = true
+        }
+
         Swal.fire({
             title: `Stock de ${stockItem.nombre} actualizado`,
             text: 'Por favor verifique el cambio en la lista',
@@ -65,15 +72,17 @@ const StockModifier = () => {
             Swal.getConfirmButton().disabled = true;
             setTimeout(() => {
             Swal.getConfirmButton().disabled = false;
-            }, 1000);},
+            }, 1500);},
             confirmButtonColor:'red'
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location.href='/'
             }})
-        await addDoc (actualizacion, {stock:data.stock, fecha:Timestamp.fromDate(new Date()), Apellido:data.apellido, logStock: nombreParaMostrar, nombre: stockItem.nombre});
-        await updateDoc (productDoc, {stock:data.stock, fecha:Timestamp.fromDate(new Date()), Apellido:data.apellido, logStock: nombreParaMostrar});
-        
+
+        if ( data.stock != stockItem.stock){
+        await addDoc (actualizacion, {stock:numero, fecha:Timestamp.fromDate(new Date()), Apellido:data.apellido, logStock: nombreParaMostrar, nombre: stockItem.nombre, entrada:entrada});
+        await updateDoc (productDoc, {stock:numero, fecha:Timestamp.fromDate(new Date()), Apellido:data.apellido, logStock: nombreParaMostrar});
+        }
     }
     
     return (

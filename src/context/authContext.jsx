@@ -8,6 +8,8 @@ import { createUserWithEmailAndPassword,
         onAuthStateChanged,
         sendPasswordResetEmail,
         sendEmailVerification,
+        setPersistence,
+        browserSessionPersistence,
 } from "firebase/auth";
 import Swal from 'sweetalert2'
 
@@ -28,6 +30,17 @@ export function AuthProvider ({children}) {
     const [usuario, setUsuario] = useState("")
 
     useEffect(()=>{
+
+        const setAuthPersistence = async () => {
+            try {
+                await setPersistence(auth, browserSessionPersistence);
+            } catch (error) {
+                console.error("Error setting persistence:", error);
+            }
+        };
+
+        setAuthPersistence();
+
         const suscripto = onAuthStateChanged(auth, (currentUser)=>{
             if(!currentUser){
                 setUsuario(null)
