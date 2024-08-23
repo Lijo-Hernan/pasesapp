@@ -52,7 +52,6 @@ if(cargando) {
       <Header/>
         <Routes>
             <Route path='/historial' element={<HistorialListContainer introduccion={`Listado completo de reportes` }/>}/>
-            <Route path='/controlStock' element={<ControlListContainer introduccion={`Control de consumos` }/>}/>
             <Route path='/' element={<ItemListContainer/>} usuarioGlobal={usuarioGlobal}/>
             <Route path='/reporte/:id' element={<ItemDetailContainer/>}/>
             <Route path='/estado/:id' element={<ItemIndividualContainer/>}/>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import classes from './controlList.module.css'
 import ControlItem from '../controlItem/ControlItem';
+import Promedio from '../promedio/Promedio'; 
 
 
 const ControlList = ({reportes}) => {
@@ -80,18 +81,20 @@ const sortedReportes = reportesResumen.sort((a, b) => b.fecha - a.fecha);
     };
 
     return (
-
-        <div>
-            <div className={classes.botones}>
-                <button onClick={handlePrevPage} disabled={currentPage === 1}>Anterior</button>
-                <span>Página {currentPage} de {totalPages}</span>
-                <button onClick={handleNextPage} disabled={currentPage === Math.ceil(reportes.length / itemsPerPage)}>Siguiente</button>
+        <div className={classes.controlList}>
+            <div className={classes.control__container}>
+                <div className={classes.botones}>
+                    <button onClick={handlePrevPage} disabled={currentPage === 1}>Anterior</button>
+                    <span>Página {currentPage} de {totalPages}</span>
+                    <button onClick={handleNextPage} disabled={currentPage === Math.ceil(reportes.length / itemsPerPage)}>Siguiente</button>
+                </div>
+                <section className={classes.listContainer}>
+                    {currentReportes.map(reporte => (
+                        <ControlItem key={reporte.key} reporte={reporte} />
+                    ))}
+                </section>
             </div>
-            <section className={classes.listContainer}>
-                {currentReportes.map(reporte => (
-                    <ControlItem key={reporte.key} reporte={reporte} />
-                ))}
-            </section>
+            <section className={classes.prom}><Promedio reportes={currentReportes} /></section>
         </div>
     );
 

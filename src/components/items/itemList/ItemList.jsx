@@ -61,7 +61,7 @@ const itemList = ({equipos}) => {
                 <p className={classes.historial__p}>Historial de Reportes</p>
             </span>
             <span className={classes.historial__container}>
-            <Link to='/controlStock' className={classes.historial}>
+            <Link to='/controlStock/Contraste Endovenoso' className={classes.historial}>
                 <article className={classes.historial__card}>
                     <img src="https://firebasestorage.googleapis.com/v0/b/pasesapp-d01af.appspot.com/o/ReporteSinFondo.png?alt=media&token=6746ff34-8100-4de2-9d36-bf8ef9a49ea2" 
                     alt="Consumos" className={classes.historial__img}/>

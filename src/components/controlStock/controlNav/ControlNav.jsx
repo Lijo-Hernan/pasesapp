@@ -32,7 +32,7 @@ const controlNav = () => {
             <span className={classes.header__cont}>
                 <nav className={classes.nav}>
                     <div className={classes.navbar__list}>
-                        <Link to={`/controlStock`} className={classes.navbar__btn}>Todos los insumos</Link>
+                        {/* <Link to={`/controlStock`} className={classes.navbar__btn}>Todos los insumos</Link> */}
                         {categorias.map(cat => {
                             return <Link key={cat.id} to={`/controlStock/${cat.nombre}`} className={classes.navbar__btn}>
                                     {cat.nombre}</Link>

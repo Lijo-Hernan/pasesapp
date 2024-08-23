@@ -4,13 +4,3 @@
     gap: 3vh;
 }
 
-.container__card{
-    display: flex;
-    padding-bottom: 1vh;
-}
-.cards{
-    width: 70%;
-}
-.prom{
-    width: 30%;
-}
