@@ -18,7 +18,7 @@ const ControlItem = ({reporte}) => {
                 <div className={classes.item__inner}>
                     <span className={classes.item__span}>
                         {/* <p className={classes.item__p}>Fecha de reporte: {formattedDate}</p> */}
-                        <p className={classes.item__p}>Fecha de reporte: {reporte.fecha}</p>
+                        <p className={classes.item__p}>Fecha de reporte: {reporte.fechaFormateada}</p>
                         <p className={classes.item__p}>Consumido: {reporte.consumido}</p>
                         {/* <p className={classes.item__p}>Técnico: {reporte.Apellido}</p> */}
                     </span>

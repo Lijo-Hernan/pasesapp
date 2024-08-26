@@ -21,7 +21,8 @@ const ultimos30Dias = reportes.filter(reporte => {
 const sumaConsumido = ultimos30Dias.reduce((acc, reporte) => acc + reporte.consumido, 0);
 
 // Calcular el promedio
-const promedioConsumido = sumaConsumido / ultimos30Dias.length;
+const promedioConsumido = parseFloat((sumaConsumido / ultimos30Dias.length).toFixed(2));
+
 
 const [item, setItem]= useState ([]);
 
@@ -43,8 +44,8 @@ if (item.length === 0) {
 const presentacion = item[0].presentacion
     return (
         <div>
-            <h3>Promedio de consumo de los ultomos 30 días de {nombre} es:</h3>
-            <h2>{promedioConsumido}  {presentacion}</h2>  
+            <h3>Promedio de consumo de los ultímos 30 días de {nombre} es:</h3>
+            <h2>{promedioConsumido}  {presentacion} por día</h2>  
         </div>
     );
 };

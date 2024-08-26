@@ -6,7 +6,6 @@ import Loader from '../../loader/Loader';
 import classes from './stockModifier.module.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import { useAuth } from '../../../context/authContext';
 
@@ -14,8 +13,6 @@ const StockModifier = () => {
     const [stockItem, setStockItem]= useState(null)
 
     const auth = useAuth();
-
-    const navegar = useNavigate()
 
     const {idStock} = useParams();
 
@@ -54,7 +51,6 @@ const StockModifier = () => {
     const stockActual = async(data) => {
 
         const numero = parseInt(data.stock, 10);
-        console.log({numero})
 
         if (numero >= stockItem.stock) {
                 entrada = true
