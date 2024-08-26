@@ -154,32 +154,43 @@ const ControlList = ({ reportes }) => {
         return acc;
     }, {});
 
-    // Paso 3: Resumir reportes por día y por nombre
-
+    //Paso 3: Resumir reportes por día y por nombre
     const reportesResumen = Object.keys(reportesAgrupados).map(key => {
         const { reportes: reportesDelDiaYNombre, timestamp, fechaFormateada } = reportesAgrupados[key];
+        
+        let stockAnterior = null; // Variable para almacenar el valor previo del stock
         const consumido = reportesDelDiaYNombre.reduce((acc, reporte) => {
-            if (reporte.entrada) {
-                return acc + reporte.stock;
-            } else {
-                // Evitar que el acumulador sea negativo
-                return Math.max(acc - reporte.stock, 0);
+            if (stockAnterior === null) {
+                stockAnterior = reporte.stock; // Inicializar con el primer valor
+                return acc;
             }
+    
+            if (reporte.entrada) {
+                if (reporte.stock > stockAnterior) {
+                    acc += (reporte.stock - stockAnterior);
+                }
+            } else {
+                acc -= (stockAnterior - reporte.stock);
+            }
+    
+            stockAnterior = reporte.stock; // Actualizar el valor de stock anterior
+    
+            return acc;
         }, 0);
+    
         const [fecha, nombre] = key.split('|'); // Separar fecha y nombre correctamente
-        
         const uniqueKey = `${fecha}-${nombre}`; // Crear una key única combinando fecha y nombre
-        
+    
         return {
             key: uniqueKey,
             fecha: timestamp,
             fechaFormateada, // Incluir la fecha formateada
             nombre,
-            consumido,
+            consumido: Math.abs(consumido), // Mostrar siempre el valor absoluto
             reportes: reportesDelDiaYNombre
         };
-    });    
-
+    });
+    
     // Paso 4: Ordenar los reportes por fecha desde el más nuevo al más viejo
     const sortedReportes = reportesResumen.sort((a, b) => b.fecha - a.fecha);
 
