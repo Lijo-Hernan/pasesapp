@@ -7,22 +7,25 @@ import Promedio from '../promedio/Promedio';
 
 const ControlList = ({ reportes }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10; // Número de reportes por página
+    const itemsPerPage = 10;
 
     // Paso 1: Filtrar por hora
     const reportesFiltrados = reportes.filter(reporte => {
         const timestamp = new Date(reporte.fecha.seconds * 1000);
         const hora = timestamp.getHours();
-        return hora >= 9 || hora < 9; // desde las 9 AM de un día hasta las 9 AM del siguiente día
+        // desde las 9 AM de un día hasta las 9 AM del siguiente día
+        return (hora >= 9) || (hora < 9 && timestamp.getDate() !== new Date().getDate());
     });
 
     // Paso 2: Agrupar por día y por nombre
     const reportesAgrupados = reportesFiltrados.reduce((acc, reporte) => {
         const timestamp = new Date(reporte.fecha.seconds * 1000);
+        
+        // Ajustar la fecha para el corte a las 9 AM
         if (timestamp.getHours() < 9) {
             timestamp.setDate(timestamp.getDate() - 1); // Ajustar el día si está antes de las 9 AM
         }
-        const dia = timestamp.toISOString().split('T')[0];
+        const dia = timestamp.toISOString().split('T')[0]; // Obtener solo la fecha (año-mes-día)
         const nombre = reporte.nombre;
         const key = `${dia}|${nombre}`;
 
@@ -37,29 +40,29 @@ const ControlList = ({ reportes }) => {
     const reportesResumen = Object.keys(reportesAgrupados).map(key => {
         const reportesDelDiaYNombre = reportesAgrupados[key];
         const [fecha, nombre] = key.split('|'); // Separar fecha y nombre correctamente
-        
+
         const fechaInicio = new Date(fecha);
         const fechaFin = new Date(fechaInicio);
         fechaFin.setDate(fechaInicio.getDate() + 1); // Siguiente día
-        fechaFin.setHours(9, 0, 0, 0); // Fin del periodo
-    
-        // Encontrar el último valor de stock con entrada=true, o usar el valor inicial del stock
+        fechaFin.setHours(9, 0, 0, 0); // Fin del periodo a las 9 AM
+
+        // Encontrar el último valor de stock con entrada=true
         const stockInicial = reportesDelDiaYNombre
             .filter(r => r.entrada)
             .map(r => r.stock)
             .pop() || 0;
-    
-        console.log(key, stockInicial)
-    
+
+        console.log(key, stockInicial);
+
         // Encontrar el último reporte con entrada=false dentro del periodo
         const reportesFalse = reportesDelDiaYNombre.filter(r => !r.entrada);
         const ultimoReporteFalse = reportesFalse.length > 0 ? reportesFalse[reportesFalse.length - 1] : null;
-    
+
         // Calcular el consumo restando solo el último reporte con entrada=false del stock inicial
         const consumido = ultimoReporteFalse ? stockInicial - ultimoReporteFalse.stock : 0;
-    
+
         const uniqueKey = `${fecha}-${nombre}`; // Crear una key única combinando fecha y nombre
-    
+
         return {
             key: uniqueKey,
             fecha,
@@ -68,11 +71,11 @@ const ControlList = ({ reportes }) => {
             reportes: reportesDelDiaYNombre
         };
     });
-    
+
     console.log(reportesResumen);
 
-    // Ordenar por fecha
-    const sortedReportes = reportesResumen.sort((a, b) => b.fecha.localeCompare(a.fecha));
+    // Ordenar por fecha (se asumió que fecha es una cadena ISO)
+    const sortedReportes = reportesResumen.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
     // Calcular los índices de los reportes a mostrar
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -113,6 +116,7 @@ const ControlList = ({ reportes }) => {
 };
 
 export default ControlList;
+
 
 
 
