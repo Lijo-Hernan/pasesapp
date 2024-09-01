@@ -71,7 +71,7 @@ const ControlList = ({ reportes }) => {
     
     console.log(reportesResumen);
 
-    // Ordenar por fecha (se asumió que fecha es una cadena ISO)
+    // Ordenar por fecha
     const sortedReportes = reportesResumen.sort((a, b) => b.fecha.localeCompare(a.fecha));
 
     // Calcular los índices de los reportes a mostrar
